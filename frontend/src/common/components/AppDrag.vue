@@ -25,7 +25,7 @@ const onDragStart = ({ dataTransfer }) => {
     @dragover.prevent
     @dragenter.prevent
   >
-    <slot />
+    <router-view />
   </div>
 </template>
 

@@ -20,7 +20,7 @@ const onDrop = ({ dataTransfer }) => {
 
 <template>
   <div @drop.stop="onDrop" @dragover.prevent @dragenter.prevent>
-    <slot />
+    <router-view />
   </div>
 </template>
 
