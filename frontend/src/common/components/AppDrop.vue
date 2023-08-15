@@ -1,3 +1,9 @@
+<template>
+  <div @drop.stop="onDrop" @dragover.prevent @dragenter.prevent>
+    <slot />
+  </div>
+</template>
+
 <script setup>
 import { DATA_TRANSFER_PAYLOAD } from "@/common/constants";
 
@@ -17,11 +23,3 @@ const onDrop = ({ dataTransfer }) => {
   }
 };
 </script>
-
-<template>
-  <div @drop.stop="onDrop" @dragover.prevent @dragenter.prevent>
-    <router-view />
-  </div>
-</template>
-
-<style scoped lang="scss"></style>

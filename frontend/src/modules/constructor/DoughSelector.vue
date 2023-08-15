@@ -1,22 +1,3 @@
-<script setup>
-defineProps({
-  modelValue: {
-    type: String,
-    default: "",
-  },
-  items: {
-    type: Array,
-    default: () => [],
-  },
-});
-
-const emit = defineEmits(["update:modelValue"]);
-
-const getImage = (image) => {
-  return new URL(`../../assets/img/${image}`, import.meta.url).href;
-};
-</script>
-
 <template>
   <div class="content__dough">
     <div class="sheet">
@@ -46,7 +27,26 @@ const getImage = (image) => {
   </div>
 </template>
 
-<style scoped lang="scss">
+<script setup>
+defineProps({
+  modelValue: {
+    type: String,
+    default: "",
+  },
+  items: {
+    type: Array,
+    default: () => [],
+  },
+});
+
+const emit = defineEmits(["update:modelValue"]);
+
+const getImage = (image) => {
+  return new URL(`../../assets/img/${image}`, import.meta.url).href;
+};
+</script>
+
+<style lang="scss" scoped>
 @import "@/assets/scss/ds-system/ds.scss";
 @import "@/assets/scss/mixins/mixins.scss";
 
@@ -59,16 +59,21 @@ const getImage = (image) => {
 
 .dough__input {
   position: relative;
+
   margin-right: 8%;
   margin-bottom: 20px;
   padding-left: 50px;
+
   cursor: pointer;
 
   img {
     @include p_center-v;
+
     width: 36px;
     height: 36px;
+
     transition: 0.3s;
+
     border-radius: 50%;
   }
 
@@ -78,6 +83,7 @@ const getImage = (image) => {
 
   span {
     @include l-s11-h13;
+
     display: block;
   }
 
