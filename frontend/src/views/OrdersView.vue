@@ -225,6 +225,7 @@ const getImage = (image) => {
 
 <style lang="scss" scoped>
 @import "@/assets/scss/ds-system/ds.scss";
+@import "@/assets/scss/mixins/mixins.scss";
 
 .order {
   margin-bottom: 32px;
