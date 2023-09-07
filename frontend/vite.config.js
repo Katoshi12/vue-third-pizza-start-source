@@ -19,7 +19,7 @@ export default defineConfig({
     port: 8080,
     proxy: {
       "/api": {
-        target: "http://backend:3000/",
+        target: "http://backend:3000/explorer/#/",
         rewrite: (path) => path.replace(/^\/api/, ""),
       },
     },

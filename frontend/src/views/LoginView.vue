@@ -6,42 +6,42 @@
     <div class="sign-form__title">
       <h1 class="title title--small">Авторизуйтесь на сайте</h1>
     </div>
-      <form action="#" method="post" @submit.prevent="login">
-        <div class="sign-form__input">
-          <label class="input">
-            <span>E-mail</span>
-            <input
-                v-model="email"
-                type="email"
-                name="email"
-                placeholder="example@mail.ru"
-            />
-          </label>
-        </div>
-
-        <div class="sign-form__input">
-          <label class="input">
-            <span>Пароль</span>
-            <input
-                v-model="password"
-                type="password"
-                name="pass"
-                placeholder="***********"
-            />
-          </label>
-        </div>
-        <button type="submit" class="button">Авторизоваться</button>
-      </form>
-      <div class="server-error">
-        {{ errorMessage }}
+    <form action="#" method="post" @submit.prevent="login">
+      <div class="sign-form__input">
+        <label class="input">
+          <span>E-mail</span>
+          <input
+            v-model="email"
+            type="email"
+            name="email"
+            placeholder="example@mail.ru"
+          />
+        </label>
       </div>
+
+      <div class="sign-form__input">
+        <label class="input">
+          <span>Пароль</span>
+          <input
+            v-model="password"
+            type="password"
+            name="pass"
+            placeholder="***********"
+          />
+        </label>
+      </div>
+      <button type="submit" class="button">Авторизоваться</button>
+    </form>
+    <div class="server-error">
+      {{ errorMessage }}
+    </div>
   </div>
 </template>
 
 <script setup>
-import {ref} from "vue";
-import {useAuthStore} from "@/stores/auth";
-import {useRouter} from "vue-router";
+import { ref } from "vue";
+import { useAuthStore } from "@/stores/auth";
+import { useRouter } from "vue-router";
 
 const authStore = useAuthStore();
 const router = useRouter();
@@ -59,7 +59,7 @@ const login = async () => {
   /* При успешной авторизации перенаправляем пользователя на главную страницу */
   if (resMsg === "success") {
     await authStore.whoami();
-    await router.push({name: "home"});
+    await router.push({ name: "home" });
   } else {
     errorMessage.value = resMsg;
   }

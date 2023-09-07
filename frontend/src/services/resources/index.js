@@ -1,5 +1,5 @@
 import { AddressResource } from "@/services/resources/address.resource";
-import { AuthResource } from "@/services/resources/auth.resource";
+import { AuthResource } from "@/services/auth.service";
 import { DoughResource } from "@/services/resources/dough.resource";
 import { IngredientResource } from "@/services/resources/ingredient.resource";
 import { MiscResource } from "@/services/resources/misc.resource";

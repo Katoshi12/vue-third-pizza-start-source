@@ -13,8 +13,8 @@ export class ApiService {
       /* Возвращаем ошибку, содержащую сообщение об ошибке и ответ сервера */
       /* Если имеем дело с ошибкой Axios, пытаемся получить сообщение, которое отправил бэкенд */
       return new ApiError(
-          e.response.data?.error?.message ?? e.message,
-          e.response
+        e.response.data?.error?.message ?? e.message,
+        e.response
       );
     } else {
       /* Возвращаем ошибку, содержащую сообщение об ошибке и ответ сервера */
