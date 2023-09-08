@@ -14,14 +14,14 @@ export class AuthResource extends ApiService {
   }
 
   login(params) {
-    return this.$post(`${this.path}/login`, params);
+    return this.$post("api/login", params);
   }
 
   logout() {
-    return this.$delete(`${this.path}/logout`);
+    return this.$delete("api/logout");
   }
 
   whoami() {
-    return this.$get(`${this.path}/whoAmI`);
+    return this.$get("api/whoAmI");
   }
 }

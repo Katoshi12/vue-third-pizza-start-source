@@ -10,19 +10,12 @@ class ApiError extends Error {
 export class ApiService {
   _getError(e) {
     if (e instanceof AxiosError) {
-      /* Возвращаем ошибку, содержащую сообщение об ошибке и ответ сервера */
-      /* Если имеем дело с ошибкой Axios, пытаемся получить сообщение, которое отправил бэкенд */
-      return new ApiError(
-        e.response.data?.error?.message ?? e.message,
-        e.response
-      );
+      return new ApiError(e.message);
     } else {
-      /* Возвращаем ошибку, содержащую сообщение об ошибке и ответ сервера */
       return new ApiError(e.message, e.response);
     }
   }
 
-  /* Функция для запросов без тела: GET, DELETE */
   _wrapper1(method, url) {
     return async () => {
       try {
@@ -40,7 +33,6 @@ export class ApiService {
     };
   }
 
-  /* Функция для запросов с телом: POST, PUT */
   _wrapper2(method, url, payload) {
     return async () => {
       try {

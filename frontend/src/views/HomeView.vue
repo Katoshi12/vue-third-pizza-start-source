@@ -1,5 +1,5 @@
 <template>
-  <main class="content">
+  <main v-if="dataStore.isDataLoaded" class="content">
     <form action="#" method="post">
       <div class="content__wrapper">
         <h1 class="title title--big">Конструктор пиццы</h1>
@@ -131,7 +131,6 @@ const resetPizza = () => {
   pizzaStore.setDough(dataStore.doughs[0].id);
   pizzaStore.setSize(dataStore.sizes[0].id);
   pizzaStore.setSauce(dataStore.sauces[0].id);
-  pizzaStore.setIngredients([]);
 };
 
 onMounted(() => {
